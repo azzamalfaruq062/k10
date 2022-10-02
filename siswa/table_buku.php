@@ -1,24 +1,5 @@
 <?php
 include '../config.php';
-// Tambah buku
-if (isset($_POST['tambah'])) {
-  $judul = $_POST['judul'];
-  $penulis = $_POST['penulis'];
-  $penerbit = $_POST['penerbit'];
-  $tahun = $_POST['tahun'];
-  $kota = $_POST['kota'];
-  $file = $_FILES['cover']['name'];
-  $tmp_name = $_FILES['cover']['tmp_name'];
-  $upload = move_uploaded_file($tmp_name, "../assets/img/" . $file);
-  $sinopsis = $_POST['sinopsis'];
-  $stok = $_POST['stok'];
-  
-  $tambahbuku = cread("buku", "('', '$judul', '$penulis', '$penerbit', '$tahun', '$kota', '$file', '$sinopsis', '$stok')");
-
-  if ($tambahbuku) {
-    header('location:buku.php');
-  }
-}
 ?>
 
 <!DOCTYPE html>

@@ -60,7 +60,7 @@
                 </div>
 
 
-                <a  class="list-group-item text-start kun btn-polos font pt-3 pb-2" href="petugas.php"><i class="fa-solid fa-clock-rotate-left"></i> &nbsp;History Pinjam</a>
+                <a  class="list-group-item text-start kun btn-polos font pt-3 pb-2" href="history.php"><i class="fa-solid fa-clock-rotate-left"></i> &nbsp;History Pinjam</a>
             </div>
         </div>
 

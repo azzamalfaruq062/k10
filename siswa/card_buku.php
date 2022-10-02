@@ -1,7 +1,5 @@
 <?php
 include '../config.php';
-// Tambah buku
-
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +31,7 @@ include '../config.php';
             <h6 class="card-text text-muted"><?=$data['penulis']?></h6>
             <div class="position-absolute bottom-0 end-0">
                 <!-- button detail -->
-                    <button type="button" class="btn btn-sm btn-polos" data-bs-toggle="modal" data-bs-target="#sinopsis"><small><i class="fa-solid fa-file-lines"></i> Sinopsis</small></button>
+                    <button class="btn btn-sm btn-polos pe-0" type="button" data-bs-toggle="modal" data-bs-target="#sinopsis"><small><i class="fa-solid fa-file-lines"></i> Detail</small></button>
                     <div class="modal fade" id="sinopsis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
@@ -49,7 +47,7 @@ include '../config.php';
                         </div>
                     </div>
                     <!-- button pinjam -->
-                    <button type="button" class="btn btn-sm btn-polos"><small><i class="fa-solid fa-right-to-bracket"></i> Pinjam</small></button>
+                    <button class="btn btn-sm btn-polos ps-2" type="button"><small><i class="fa-solid fa-right-to-bracket"></i> Pinjam</small></button>
             </div>
             </div>
             <div class="card-footer text-center">
