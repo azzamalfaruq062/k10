@@ -34,7 +34,7 @@ if (isset($_POST['tambah'])) {
     <?php include 'nav.php'?>
         <div class="container">
             <div class="container pt-4 m-auto">
-                <!-- Tambah data -->
+                <!-- Tambah buku -->
                 <button class="btn btn-sm btn-success mb-3" data-bs-toggle="modal" data-bs-target="#tambah">Tambah +</button>
                 <div class="modal fade" id="tambah" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">

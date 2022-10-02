@@ -19,7 +19,6 @@ if(isset($_POST['update'])){
         $update = update("buku", "judul='$judul', penulis='$penulis', penerbit='$penerbit', tahun='$tahun', kota='$kota', sinopsis='$sinopsis', stok='$stok' WHERE id_buku='$id'");
     }else{
         $update = update("buku", "judul='$judul', penulis='$penulis', penerbit='$penerbit', tahun='$tahun', kota='$kota', cover='$cover', sinopsis='$sinopsis', stok='$stok' WHERE id_buku='$id'");
-        // $update = mysqli_query($con,"UPDATE data_mahasiswa SET id_mhs='$id', nama_mhs='$nama', nim_mhs='$nim',alamat_mhs='$alamat', tgl_lahir='$tgl', foto='$foto', jurusan_in='$jurusan' where id_mhs=$id");
     }
 
     if($update){

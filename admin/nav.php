@@ -163,7 +163,7 @@
                           </li>
                           <li><hr class="dropdown-divider"></li>
                           <li>
-                            <a class="dropdown-item" href="logout.php">
+                            <a class="dropdown-item" href="../logout.php">
                                 <div class="row">
                                     <div class="col-2 text-abu"><i class="fa-solid fa-right-from-bracket"></i></div>
                                     <div class="col-2 ms-2"><small> Logout</small></div>

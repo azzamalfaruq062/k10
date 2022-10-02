@@ -29,7 +29,7 @@
                 </div>
                 <div class="card-body">
                 <h5 class="card-title mt-2">
-                    <a href="index1.php">
+                    <a href="login_admin.php">
                         <button class="btn btn-warning btn-bulat text-light shadow">Petugas</button>
                     </a>
                 </h5>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="card-body">
                 <h5 class="card-title">
-                    <a href="index2.php">
+                    <a href="login_siswa.php">
                         <button class="btn btn-warning btn-bulat text-light shadow">Siswa</button>
                     </a>
                 </h5>

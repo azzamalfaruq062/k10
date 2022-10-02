@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 session_start();
-if(isset($_SESSION['nip'])){
+if(isset($_SESSION['nis'])){
     header('location:home.php');
 }
 
@@ -20,18 +20,14 @@ if(isset($_SESSION['nip'])){
 <body>
     <div class="container">
       <div class="card mx-auto my-5" style="width: 30rem">
-        <div class="card-header text-center" style="background-color: #C7F2A4">
+        <div class="card-header text-center" style="background-color: #9ED2C6">
           <h5 class="card-title">Login</h5>
         </div>
         <div class="card-body bg-secondary bg-opacity-10">
           <form class="" action="" method="post">
             <div class="mb-3">
-              <label for="" class="form-label">NIP</label>
-              <input type="text" name="nip" class="form-control" placeholder="Masukkan NIP Anda" value="">
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label">Password</label>
-              <input type="password" name="password" class="form-control" placeholder="Masukkan Password" value="">
+              <label for="" class="form-label">NIS</label>
+              <input type="text" name="nis" class="form-control" placeholder="Masukkan NIS Anda" value="">
             </div>
             <button type="submit" name="login" class="btn btn-outline-success">Login</button>
           </form>
@@ -45,22 +41,20 @@ if(isset($_SESSION['nip'])){
 
 <?php
 if(isset($_POST['login'])){
-  $nip = $_POST['nip'];
-  $password = $_POST['password'];
+  $nis = $_POST['nis'];
 
-  $query = mysqli_query($conn, "SELECT * FROM petugas WHERE nip='$nip'");
+  $query = mysqli_query($conn, "SELECT * FROM siswa WHERE nis='$nis'");
   $data = mysqli_fetch_assoc($query);
 
   if ($data) {
-    if ($data['password'] == $password) {
-      $_SESSION['nip'] = $data['nip'];
-      $_SESSION['level'] = $data['level'];
-        header('location:home.php');
+    if ($data['nis'] == $nis) {
+      $_SESSION['nis'] = $data['nis'];
+        header('location:siswa/table_buku.php');
     }else {
-      echo "<script>alert('Password tidak sesuai.');</script>";
+      echo "<script>alert('NIS tidak sesuai.');</script>";
     }
   }else {
-    echo "<script>alert('NIP tidak terdaftar.');</script>";
+    echo "<script>alert('NIS tidak terdaftar.');</script>";
   }
 }
  ?>

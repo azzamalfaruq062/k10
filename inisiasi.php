@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 </body>
 </html>
