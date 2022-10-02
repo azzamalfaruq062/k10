@@ -27,11 +27,6 @@ if (isset($_POST['pinjam'])) {
         $_SESSION['id_peminjaman'] = $cetak['id_peminjaman'];
         $_SESSION['peminjam'] = $cetak['id_siswa'];
         $_SESSION['kuantitas'] = $_POST['kuantitas'];
-
-        $id_peminjam = $cetak['id_peminjaman'];
-        $kuantitas = $_POST['kuantitas'];
-
-        $tambah_detail = cread('detail_peminjaman', "('', '$id_buk', '$id_peminjam', '$kuantitas')");
     }
   }
 ?>

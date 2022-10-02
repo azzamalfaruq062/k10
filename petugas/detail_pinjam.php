@@ -4,24 +4,16 @@ session_start();
 
 // Pinjam buku
 if (isset($_POST['cetak'])) {
-    // $id_buku = $_SESSION['id_buku'];
-    // $id_peminjaman = $_SESSION['id_peminjaman'];
-    // $kuantitas = $_SESSION['kuantitas'];
+        $id_peminjam = $_SESSION['id_peminjaman'];
+        $id_buku = $_SESSION['id_buku'];
+        $kuantitas = $_SESSION['kuantitas'];
 
-    
-    // $peminjaman = cread("detail_peminjaman", "('', '$id_buku', '$id_peminjaman', '$kuantitas')");
+        $tambah_detail = cread('detail_peminjaman', "('', '$id_buku', '$id_peminjam', '$kuantitas')");
 
-    // $cetak = mysqli_fetch_assoc(read('*', 'peminjaman', '' ));
-
-    // if($cetak){
-    //     $_SESSION['id_peminjaman'] = $cetak['id_peminjaman'];
-    //     $_SESSION['peminjam'] = $cetak['id_siswa'];
-    // }
-
-unset($_SESSION['id_peminjaman']);
-unset($_SESSION['id_buku']);
-unset($_SESSION['peminjam']);
-unset($_SESSION['kuantitas']);
+    unset($_SESSION['id_peminjaman']);
+    unset($_SESSION['id_buku']);
+    unset($_SESSION['peminjam']);
+    unset($_SESSION['kuantitas']);
 
 header("location:peminjaman.php");
 }
@@ -72,7 +64,8 @@ header("location:peminjaman.php");
                         <?php
                             $no=0;
                             $peminjambuku = $_SESSION['peminjam'];
-                            $detail_peminjaman = read('*', 'buku ', "");
+                            $id_buku = $_SESSION['id_buku'];
+                            $detail_peminjaman = read('*', 'buku ', "WHERE id_buku='$id_buku'");
                                     while($data = mysqli_fetch_array($detail_peminjaman)){
                                     $no++;
                         ?>
