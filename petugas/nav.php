@@ -61,7 +61,7 @@
                     <a  class="list-group-item text-start kun btn-polos font" href="peminjaman.php"><i class="fa-solid fa-table-list"></i> &nbsp;Peminjaman</a>
                     <a  class="list-group-item text-start kun btn-polos font" href="pengembalian.php"><i class="fa-solid fa-grip"></i> &nbsp;Pengembalian</a>
                 </div>
-                <button  class="list-group-item text-start kun btn-polos font pt-3 pb-2" onclick="kelola()"><i class="fa-solid fa-book"></i> &nbsp;Kelola<small class="text-sm ms-5"><i class="fa-solid fa-chevron-down"></i></small></button>
+                <button  class="list-group-item text-start kun btn-polos font pt-3 pb-2" onclick="kelola()"><i class="fa-solid fa-book"></i> &nbsp;Kelola<small class="text-sm ms-5 ps-4"><i class="fa-solid fa-chevron-down"></i></small></button>
                 <div class="ms-3" id="kelola" style="display: none;">
                     <a  class="list-group-item text-start kun btn-polos font" href="siswa"><i class="fa-solid fa-table-list"></i> &nbsp;Siswa</a>
                     <a  class="list-group-item text-start kun btn-polos font" href="#"><i class="fa-solid fa-grip"></i> &nbsp;Peminjaman</a>
