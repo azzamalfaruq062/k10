@@ -34,56 +34,6 @@ if (isset($_POST['tambah'])) {
     <?php include 'nav.php'?>
         <div class="container">
             <div class="container pt-4 m-auto">
-                <!-- Tambah data -->
-                <button class="btn btn-sm btn-success mb-3" data-bs-toggle="modal" data-bs-target="#tambah">Tambah +</button>
-                <div class="modal fade" id="tambah" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Tambah Buku</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="POST" enctype="multipart/form-data">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" name="judul" placeholder="judul">
-                            <label>Judul</label>
-                        </div>
-                        <div class="form-floating mb-2">
-                            <input type="text" class="form-control" name="penulis" placeholder="penulis">
-                            <label>Penulis</label>
-                        </div>
-                        <div class="form-floating mb-2">
-                            <input type="text" class="form-control" name="penerbit" placeholder="penerbit">
-                            <label>Penerbit</label>
-                        </div>
-                        <div class="form-floating mb-2">
-                            <input type="text" class="form-control" name="tahun" placeholder="tahun">
-                            <label>Tahun</label>
-                        </div>
-                        <div class="form-floating mb-2">
-                            <input type="text" class="form-control" name="kota" placeholder="kota">
-                            <label>Kota</label>
-                        </div>
-                        <div class="form-floating mb-2">
-                            <input type="number" class="form-control" name="stok" placeholder="stok">
-                            <label>Stok</label>
-                        </div>
-                        <div class="mb-2">
-                            <input type="file" class="form-control" name="cover" placeholder="cover">
-                        </div>
-                        <div class="form-floating mb-2">
-                            <textarea class="form-control" placeholder="sinopsis" name="sinopsis" style="height: 200px;"></textarea>
-                            <label>Sinopsis</label>
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <input class="btn btn-success" type="submit" name="tambah" value="Submit">
-                        </div>
-                        </form>
-                    </div>
-                    </div>
-                </div>
-                </div>
                 <!-- tabel -->
                 <table class="table table-sm table-hover table-bordered">
                     <thead class="text-center">
@@ -97,7 +47,7 @@ if (isset($_POST['tambah'])) {
                             <th>Kota</th>
                             <th>Stok</th>
                             <th>Sinopsis</th>
-                            <th>Aksi</th>
+                            <th>Pinjam</th>
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
@@ -119,10 +69,7 @@ if (isset($_POST['tambah'])) {
                             <td><?=$data['kota']?></td>
                             <td><?=$data['stok']?></td>
                             <td class="text-center">
-                                <!-- modal -->
-                                <form method="GET" value="<?php if(isset($_GET['sinopsis'])){echo $_GET['sinopsis'];}?>">
-                                    <button type="button" name="sinopsis" class="btn btn-sm btn-polos" data-bs-toggle="modal" value="<?=$data['id_buku']?>" data-bs-target="#sinopsis"><small><i class="fa-solid fa-file-lines"></i> Sinopsis</small></button>
-                                </form>
+                                <button type="button" class="btn btn-sm btn-polos" data-bs-toggle="modal" data-bs-target="#sinopsis"><small><i class="fa-solid fa-file-lines"></i> Sinopsis</small></button>
                                 <div class="modal fade" id="sinopsis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                         <div class="modal-content">
@@ -132,10 +79,7 @@ if (isset($_POST['tambah'])) {
                                         </div>
                                         <div class="modal-body">
                                             <?php
-                                                // $id = $_GET['sinopsis'];
-                                                // $sinop = read('sinopsis', 'buku', "WHERE id_buku ='$id'");
-                                                // $tsinop = mysqli_fetch_assoc($sinop);
-                                                echo $data['sinopsis'];   
+                                            echo $data['sinopsis'];
                                             ?>
                                         </div>
                                         </div>
@@ -143,15 +87,11 @@ if (isset($_POST['tambah'])) {
                                 </div>
                             </td>
                             <td class="text text-center">
-                                <!-- Edit data -->
+                                <!-- pinjam buku -->
                                 <button class="btn btn-polos p-1">
-                                    <a class="text-warning" href="edit_buku.php?id_buku=<?= $data['id_buku']; ?>">
-                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    <a class="text-success" href="">
+                                        <i class="fa-solid fa-right-to-bracket"></i>
                                     </a>
-                                </button> |
-                                <!-- Hapus data -->
-                                <button class="btn btn-polos p-1">
-                                    <a class="text-danger" href="hapus.php?id_buku=<?= $data['id_buku']; ?>"><i class="fa-solid fa-trash"></i></a>
                                 </button>
                             </td>
                         </tr>
